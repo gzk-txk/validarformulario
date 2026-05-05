@@ -3,11 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Validar formulario</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+    <body>
+        <header>
+            <h1>Formulario Denuncia.</h1>
+        </header>
+    <div class="formulario">
+        <form 
+            action="#" 
+            method="post" 
+            enctype="multipart/form-data" 
+            target="autofocus" 
+            autocomplete="off" 
+            novalidate 
+            name="formularioRobo" 
+            accept-charset="UTF-8" 
+            onsubmit="return validarFormulario()" 
+            rel="noopener noreferrer">
+            <fieldset>
+                <legend>Informacion personal.</legend><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" ><br><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" ><br><br>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="0" max="100" required><br><br>
+            <p>Seleccion de género.</p>
+            <input type="radio" id="hombre" name="genero" value="hombre" required>
+            <label for="hombre">Hombre</label><br>
+            <input type="radio" id="mujer" name="genero" value="mujer">
+            <label for="mujer">Mujer</label><br>
+            <input type="radio" id="otro" name="genero" value="otro">
+            <label for="otro">Otro</label><br><br>
+            </fieldset><br><br>
+            <h3>Tipo de denuncia.</h3>
+            <label for="robo">Robo</label>
+            <input type="checkbox" id="robo" name="robo" value="sí"><br><br>
+            <label for="agresion">Agresion</label>
+            <input type="checkbox" id="agresion" name="agresion" value="sí" ><br><br>
+            <label for="fraude">Fraude</label>
+            <input type="checkbox" id="fraude" name="fraude" value="sí"><br><br>
+            <h3>Contacto:</h3>
+            <label for="email">Correo Electronico:</label>
+            <input type="email" id="email" name="email" placeholder="Introzca su E-mail aquí"><br><br>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="(+34) xxx-xxx-xxx"><br><br>
+            <h3>Informe de fecha y hora</h3>
+            <label for="fecha">Fecha de incidente</label>
+            <input type="date" id="fecha" name="fecha"><br><br>
+            <label for="hora">Hora de incidencia</label>
+            <input type="time" id="hora" name="hora"><br><br>
+            <h3>Informe robo</h3>
+            <label for="color">Color objeto sustraido</label>
+            <input type="color" id="color" name="color"><br><br>
+            <label for="valor">Valor ojeto sustraido</label>
+            <input type="range" id="valor" name="valor" min="0" max="100"><br><br>
+            <label for="tipo">Tipo de objeto sustraido</label><br><br>
+                <select id="tipo" name="tipo">
+                    <option value="-">-</option>
+                    <option value="coche">Coche</option>
+                    <option value="moto">Moto</option>
+                    <option value="otro">Otro</option>
+                </select><br><br>
+            <label for="robo">Tipo de Robo</label><br><br>
+                <select id="robo" name="robo">
+                    <option value="-">-</option>
+                    <option value="fuerza">Fuerza</option>
+                    <option value="carterista">Carterista</option>
+                    <option value="otro">Otro</option>
+                </select><br><br>
+                <label for="frutas">¿Como deseas formalizar la denuncia?</label><br>
+                <select id="frutas" name="frutas[]" multiple size="4">
+                    <option value="telefono">Telefonicamente</option>
+                    <option value="presencial">Presencial</option>
+                    <option value="telematicamente">Telematicamente</option>
+                    <option value="otro">Otro</option>
+                </select><br><br>
+            <label for="comentarios">Añadir comentarios:</label><br><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí"></textarea><br><br>
 
+            
+            <input type="submit" value="Enviar"><br><br>
+            
+        </form>
+        
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
